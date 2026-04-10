@@ -289,7 +289,10 @@ class AbilityVSOfferApp(tk.Tk):
 
         t.insert(tk.END, f"当前权限：{role}\n")
         t.insert(tk.END, f"当前能力：{abi}\n")
-        t.insert(tk.END, f"对应Offer：{offer_str}\n\n")
+        #t.insert(tk.END, f"对应Offer：{offer_str}\n\n")
+        # 正确：当前权限 + 当前能力 → 计算出真实Offer
+        real_offer = area_map[get_area(role, abi)]
+        t.insert(tk.END, f"对应Offer：{real_offer}\n\n")
 
         # 正确判断逻辑
         if abi_area > offer_area:
