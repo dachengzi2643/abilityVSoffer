@@ -132,9 +132,13 @@ else:
             ab_a = abi_area_map[abi]
             of_a = offer_to_area[ho]
 
+            # 计算真实 Offer
+            real_offer = area_map[get_area(hr, abi)]
+
             st.markdown(f"当前权限：{hr}")
             st.markdown(f"当前能力：{abi}")
-            st.markdown(f"对应Offer：{ho}")
+            # st.markdown(f"对应Offer：{ho}")
+            st.markdown(f"对应Offer：{real_offer}")  # <--- 已修复
             st.divider()
 
             # ========== 判断逻辑 100% 一样 ==========
